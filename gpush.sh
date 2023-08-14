@@ -3,10 +3,10 @@
 git add .
 
 while true; do
-    read -p "Add Commit message:" message
+    read -p "Add Commit Message:" message
 
     if [[ -z "$message" ]]; then
-        echo -e "\e[1;31mError Alert!, message can't be empty\e[0m"
+        echo -e "\e[1;31mError Alert!, Message Can't Be Empty\e[0m"
     else
         git commit -m "$message"
         git push -u origin main
@@ -16,10 +16,10 @@ done
 
 echo "OK! ✅"
 
-colors=("e[1;31m" "e[1;32m" "e[1;33m" "e[1;34m" "e[1;35m")
+colors=("31" "32", "33" "34" "35");
 
 for i in 5 4 3 2 1; do
-    echo -e "\e[${colors[$i-1]}mExiting in $i seconds...\e[0m"
+    echo -e "\e[${colors[$i-1]}mExiting In $i Seconds...\e[0m"
     sleep 1
 done
 

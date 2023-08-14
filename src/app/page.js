@@ -16,12 +16,17 @@ export default function Home() {
     );
   };
 
+  const funcT = (y) => {
+    return 5+y;
+  }
+
   return (
     <main className={styles.main}>
-      <User name="binaryBoss"/>
+      <User name="Jack Ryan"/>
       <h1>Home Page</h1>
       <button onClick={()=>alert("button click works")}>Click Me</button>
       <button onClick={()=>coolFunc(68)}>test</button>
+      {funcT('10')} {funcT(-'10')} {funcT(+'10')}
     </main>
   );
 }

@@ -1,15 +1,25 @@
 "use client";
-import React from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
   const router = useRouter();
-
+  const navigate = (page) => {
+    router.push("/login/" + page);
+  };
   return (
-    <>
-      <div>Login page</div>
-      <button onClick={() => router.push("/")}>Get back to home page</button>
-    </>
+    <div>
+      <h1>Login Page</h1>
+      <Link href="/">Go to Home Page</Link>
+      <br /> <br />
+      <button onClick={() => navigate("student-login")}>
+        Go to Student Login Page
+      </button>
+      <br /> <br />
+      <button onClick={() => navigate("teacher-login")}>
+        Go to Teacher Login Page
+      </button>
+    </div>
   );
 };
 

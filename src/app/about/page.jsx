@@ -1,12 +1,19 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
 
 const About = () => {
+  const router = useRouter();
+
   return (
-    <>
-      <div>About page</div>
-      <Link href="/" style={{color: "red"}}>Go Back To Home Page</Link>
-    </>
+    <div>
+      <h1>About Page</h1>
+      <button onClick={() => router.push("/")}>Go to Home Page</button>
+      <br />
+      <Link href="/about/about-college">Go to About College page</Link>
+      <br /> <br />
+      <Link href="/about/about-students">Go to About Student page</Link>
+    </div>
   );
 };
 

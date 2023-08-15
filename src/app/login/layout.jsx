@@ -1,24 +1,23 @@
 import Link from "next/link";
-import "./login.css"
-
+import './login.css'
 export default function Layout({ children }) {
-  return (
-    <div>
-      <ul className="login-menu">
-        <li>
-          <h4>Login Navbar</h4>
-        </li>
-        <li>
-          <Link href="/login">Login Main</Link>
-        </li>
-        <li>
-          <Link href="/login/student-login">Student Login </Link>
-        </li>
-        <li>
-          <Link href="/login/teacher-login">Teacher Login </Link>
-        </li>
-      </ul>
-      {children}
-    </div>
-  );
+    return (
+        <div>
+            <ul className="login-menu">
+                <li>
+                    <h4>Login Navbar</h4>
+                </li>
+            <li>
+                <Link href="/login">Login Main</Link>
+            </li>
+            <li>
+                <Link href="/login/loginstudent">Student Login </Link>
+            </li>
+            <li>
+                <Link href="/login/loginteacher">Teacher Login </Link>
+            </li>
+            </ul>
+            {children}
+        </div>
+    )
 }

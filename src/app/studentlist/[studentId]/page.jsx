@@ -13,7 +13,7 @@ const StudentDetails = ({ params }) => {
       <strong style={{ color: "red" }}>
         {params.studentId}
         &apos;s
-      </strong>
+      </strong>{" "}
       details
     </div>
   );

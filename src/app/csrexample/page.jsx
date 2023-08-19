@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 
 const ProductList = () => {
   const [products, setProduucts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   let rendered = useRef(false);
 
@@ -14,6 +15,7 @@ const ProductList = () => {
     const data = await response.json();
     console.log(data.products);
     setProduucts((prev) => [...prev, data.products]);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -27,9 +29,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <>
-      <div>{JSON.stringify(products)}</div>
-    </>
+    <>{loading ? <p>Loading...</p> : <div>{JSON.stringify(products)}</div>}</>
   );
 };
 

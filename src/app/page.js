@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <User name="Jack Ryan" />
+      <User name="jack_ryan" />
       <h1>Home Page</h1>
       <button onClick={() => alert("button click works")}>Click Me</button>
       <button onClick={() => coolFunc(68)}>test</button>

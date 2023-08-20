@@ -1,5 +1,12 @@
 import React from 'react'
 
+export function generateMetadata() {
+  return {
+    title: "Error!",
+    description: "Route not found",
+  };
+}
+
 const NotFound = () => {
   return (
     <div>

@@ -1,3 +1,5 @@
+// SSG - Static Site Generation
+
 import React from "react";
 import Product from "./product";
 
@@ -10,12 +12,12 @@ const dataFetch = async () => {
   return data;
 };
 
-const SSRExample = async () => {
+const SSGExample = async () => {
   const showableData = await dataFetch();
   console.log(showableData.products);
   return (
     <div>
-      <h2>SSR : API DATA</h2>
+      <h2>SSG : API DATA</h2>
       {showableData.products.map((i) => (
         <div key={i.id}>
           <p>{i.title}</p>
@@ -26,4 +28,4 @@ const SSRExample = async () => {
   );
 };
 
-export default SSRExample;
+export default SSGExample;

@@ -1,5 +1,7 @@
+// SSR - Server Side Rendering
+
 async function userList() {
-  let data = await fetch("https://dummyjson.com/users");
+  let data = await fetch("https://dummyjson.com/users", { cache: 'no-store' });
   data = await data.json();
   return data.users;
 }

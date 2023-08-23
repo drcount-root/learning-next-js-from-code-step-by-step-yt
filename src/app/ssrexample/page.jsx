@@ -1,3 +1,5 @@
+// SSG - Static Site Generation
+
 import React from "react";
 
 const dataFetch = async () => {

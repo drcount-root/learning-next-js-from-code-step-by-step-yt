@@ -4,7 +4,7 @@ import { getUsers } from "../../../../services/getUsers";
 const UserDetailss = async ({ params }) => {
   const getUserList = getUsers();
   const users = await getUserList;
-  const userDetails = users[params.userId-1];
+  const userDetails = users[params.userId - 1];
   console.log(userDetails);
 
   return (
@@ -18,3 +18,11 @@ const UserDetailss = async ({ params }) => {
 };
 
 export default UserDetailss;
+
+export async function generateStaticParams() {
+  const getUserList = getUsers();
+  const users = await getUserList;
+  return users.map((user) => ({
+    userId: user.id.toString(),
+  }));
+}

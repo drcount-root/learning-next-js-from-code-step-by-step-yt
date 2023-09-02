@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "@/config/constants";
 import React from "react";
 
 const EnvironmentVariablesUseCases = () => {
@@ -12,9 +13,9 @@ const EnvironmentVariablesUseCases = () => {
       <h2>Username - {un}</h2>
       <h2>Server Password - {sp}</h2>
       {process.env.NODE_ENV === "development" ? (
-        <p>Development Mode</p>
+        <p>Development Mode | API - {API_BASE_URL}</p>
       ) : (
-        <p>Production Mode</p>
+        <p>Production Mode | API - {API_BASE_URL}</p>
       )}
     </div>
   );

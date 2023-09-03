@@ -1,4 +1,4 @@
-import { users } from "@/util/db";
+import { users } from "@/utils/db";
 import { NextResponse } from "next/server";
 
 export function GET() {

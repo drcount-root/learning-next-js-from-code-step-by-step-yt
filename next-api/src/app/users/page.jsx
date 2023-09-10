@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DeleteUser from './DeleteUser';
 
 const style={
   display: 'flex',
@@ -25,6 +26,7 @@ const UsersList = async () => {
             <span>
               <Link href={`users/${user.id}/update`}>Edit</Link>
             </span>
+            <DeleteUser id={user.id}/>
           </div>
         ))}
       </div>

@@ -26,3 +26,18 @@ export async function PUT(request, content) {
 
   return NextResponse.json({ result: payload, success: true }, { status: 200 });
 }
+
+export function DELETE(request, content) {
+  let userId = content.params.userId;
+  if (userId) {
+    return NextResponse.json(
+      { result: "User deleted", success: true },
+      { status: 200 }
+    );
+  } else {
+    return NextResponse.json(
+      { result: "error somewhere", success: false },
+      { status: 400 }
+    );
+  }
+}

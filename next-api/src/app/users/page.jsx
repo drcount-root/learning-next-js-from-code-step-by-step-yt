@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+const style={
+  display: 'flex',
+  gap: '20px'
+}
+
 const getUsersList = async (API_URL) => {
   const response = await fetch(API_URL);
   const data = await response.json();
@@ -13,9 +18,14 @@ const UsersList = async () => {
       <h1>users list</h1>
       <div style={{ display: "flex", flexDirection: "column" }}>
         {usersData.map((user) => (
-          <Link href={`users/${user.id}`} key={user.id}>
-            {user.name}
-          </Link>
+          <div style={style}>
+            <Link href={`users/${user.id}`} key={user.id}>
+              {user.name}
+            </Link>
+            <span>
+              <Link href={`users/${user.id}/update`}>Edit</Link>
+            </span>
+          </div>
         ))}
       </div>
     </>

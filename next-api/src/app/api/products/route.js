@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { connectionSrt } from "../../../lib/db";
 import { Product } from "../../../lib/model/product";
 
-// GET Products
+// GET (Read) All Products
 
 export async function GET() {
   let data = [];
@@ -18,7 +18,7 @@ export async function GET() {
   return NextResponse.json({ result: data, success: true });
 }
 
-// POST
+// POST (Create) A New Product
 
 export async function POST(request) {
   const payload = await request.json();
@@ -26,5 +26,5 @@ export async function POST(request) {
   let product = new Product(payload);
 
   const newProduct = await product.save();
-  return NextResponse.json({ result: newProduct, status: true });
+  return NextResponse.json({ result: newProduct, success: true });
 }

@@ -31,3 +31,16 @@ export async function GET(request, content) {
 
   return NextResponse.json({ result, success: true });
 }
+
+
+export async function DELETE(request, content){
+    const productId = content.params.productId;
+    const record = {_id: productId};
+
+    await mongoose.connect(connectionSrt);
+
+  const result = await Product.deleteOne(record);
+
+  return NextResponse.json({ result, success: true });
+
+}

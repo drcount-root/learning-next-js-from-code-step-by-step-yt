@@ -5,17 +5,32 @@ import { Product } from "../../../lib/model/product";
 
 // GET (Read) All Products
 
+// export async function GET() {
+//   let data = [];
+//   try {
+//     await mongoose.connect(connectionSrt);
+//     data = await Product.find();
+//     console.log(data);
+//   } catch (error) {
+//     data = { success: false };
+//   }
+
+//   return NextResponse.json({ result: data, success: true });
+// }
+
 export async function GET() {
   let data = [];
+  let success;
   try {
     await mongoose.connect(connectionSrt);
     data = await Product.find();
-    console.log(data);
+    success = true;
   } catch (error) {
-    data = { success: false };
+    data = "error";
+    success = false;
   }
 
-  return NextResponse.json({ result: data, success: true });
+  return NextResponse.json({ result: data, success: success });
 }
 
 // POST (Create) A New Product

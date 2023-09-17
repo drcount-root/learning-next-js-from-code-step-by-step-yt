@@ -19,3 +19,15 @@ export async function PUT(request, content) {
 
   return NextResponse.json({ result, success: true });
 }
+
+export async function GET(request, content) {
+  const productId = content.params.productId;
+
+  const record = { _id: productId };
+
+  await mongoose.connect(connectionSrt);
+
+  const result = await Product.findById(record);
+
+  return NextResponse.json({ result, success: true });
+}

@@ -3,7 +3,7 @@ import DeleteProduct from "./DeleteProduct";
 
 const getProducts = async () => {
   let data = await fetch("http://localhost:3000/api/products", {
-    cache: "no-store",
+    cache: "no-cache",
   });
   data = await data.json();
 

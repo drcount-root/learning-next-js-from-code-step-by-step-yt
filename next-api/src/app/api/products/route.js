@@ -1,4 +1,4 @@
-import mongoose, { ConnectionStates } from "mongoose";
+import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import { connectionSrt } from "../../../lib/db";
 import { Product } from "../../../lib/model/product";
